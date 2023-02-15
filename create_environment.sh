@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# [APT]
+echo "[APT] apt update"
+sudo apt update
+
 # [ZSH]
 echo "[ZSH] apt install zsh -y"
 sudo apt install zsh -y
