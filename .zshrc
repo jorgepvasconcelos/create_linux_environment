@@ -1,9 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# -------------------------------- [START] P10K --------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# -------------------------------- [END] P10K --------------------------------
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -19,16 +21,16 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# p10k
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# -------------------------------- [START] MY STUFF --------------------------------
+# [MY] exports
+export PATH="$HOME/.local/bin":$PATH
 
-# [MY] souces
+# [MY] sources
 . "$HOME/.asdf/asdf.sh"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # [MY] alias
 alias la="exa -lah  --icons --sort extension --group-directories-first"
 alias ls="exa -lh  --icons --sort extension --group-directories-first"
 alias ..="cd .."
-#alias ...="cd ../.."
+# -------------------------------- [END] MY STUFF --------------------------------
