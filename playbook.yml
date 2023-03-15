@@ -1,6 +1,5 @@
 - hosts: localhost
 
-
   tasks:
   - name: "apt upgrade"
     apt: upgrade=dist force_apt_get=yes
@@ -15,16 +14,29 @@
         - exa
       state: present
 
+  - name: "GIT clone Dotfiles"
+    git:
+      repo: https://github.com/jorgepvasconcelos/Dotfiles
+      dest: ~/Dotfiles
+      depth: 1
+  - name: "Copy ~/Dotfiles to ~"
+    copy:
+      src: ~/Dotfiles
+      dest: ~
+  - name: "Delete /Dotfiles"
+    file:
+      path: ~/Dotfiles
+      state: absent
+
   - name: "GIT clone PL10K"
     git:
       repo: https://github.com/romkatv/powerlevel10k.git
       dest: ~/powerlevel10k
       depth: 1
-
-  - name: "GIT clone Dotfiles"
+  - name: "GIT clone zsh-autosuggestions"
     git:
-      repo: https://github.com/jorgepvasconcelos/Dotfiles
-      dest: ~/Dotfiles
+      repo: https://github.com/zsh-users/zsh-autosuggestions.git
+      dest: ~/.zsh/zsh-autosuggestions
       depth: 1
 
 #  - name: "asdasd files"
