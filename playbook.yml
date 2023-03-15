@@ -21,8 +21,8 @@
       depth: 1
   - name: "Copy ~/Dotfiles to ~"
     copy:
-      src: ~/Dotfiles
-      dest: ~
+      src: ~/Dotfiles/
+      dest: ~/
   - name: "Delete /Dotfiles"
     file:
       path: ~/Dotfiles
