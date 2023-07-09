@@ -33,4 +33,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias la="exa -lah  --icons --sort extension --group-directories-first"
 alias ls="exa -lh  --icons --sort extension --group-directories-first"
 alias ..="cd .."
+alias cat="batcat"
 # -------------------------------- [END] MY STUFF --------------------------------
