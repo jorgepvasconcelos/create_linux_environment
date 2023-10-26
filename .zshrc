@@ -24,6 +24,7 @@ compinit
 # -------------------------------- [START] MY STUFF --------------------------------
 # [MY] exports
 export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/.asdf/installs/rust/1.71.1/bin":$PATH
 
 # [MY] sources
 . "$HOME/.asdf/asdf.sh"
